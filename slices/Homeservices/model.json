@@ -1,0 +1,64 @@
+{
+  "id": "homeservices",
+  "type": "SharedSlice",
+  "name": "Homeservices",
+  "description": "Homeservices",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "header": {
+          "type": "Text",
+          "config": {
+            "label": "header",
+            "placeholder": ""
+          }
+        },
+        "services_container": {
+          "type": "Group",
+          "config": {
+            "label": "services container",
+            "repeat": true,
+            "fields": {
+              "service_image": {
+                "type": "Image",
+                "config": {
+                  "label": "service image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "service_header1": {
+                "type": "Text",
+                "config": {
+                  "label": "service header1",
+                  "placeholder": ""
+                }
+              },
+              "service_header2": {
+                "type": "Text",
+                "config": {
+                  "label": "service header2",
+                  "placeholder": ""
+                }
+              },
+              "service_writeup": {
+                "type": "Text",
+                "config": {
+                  "label": "service writeup",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

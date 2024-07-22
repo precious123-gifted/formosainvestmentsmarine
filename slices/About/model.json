@@ -1,0 +1,47 @@
+{
+  "id": "about",
+  "type": "SharedSlice",
+  "name": "About",
+  "description": "About",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "header": {
+          "type": "Text",
+          "config": {
+            "label": "header",
+            "placeholder": ""
+          }
+        },
+        "writeup1": {
+          "type": "Text",
+          "config": {
+            "label": "writeup1",
+            "placeholder": ""
+          }
+        },
+        "writupe2": {
+          "type": "Text",
+          "config": {
+            "label": "writupe2",
+            "placeholder": ""
+          }
+        },
+        "writeup3": {
+          "type": "Text",
+          "config": {
+            "label": "writeup3",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

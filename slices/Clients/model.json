@@ -1,0 +1,50 @@
+{
+  "id": "clients",
+  "type": "SharedSlice",
+  "name": "Clients",
+  "description": "Clients",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "writeup": {
+          "type": "Text",
+          "config": {
+            "label": "writeup",
+            "placeholder": ""
+          }
+        },
+        "header": {
+          "type": "Text",
+          "config": {
+            "label": "header",
+            "placeholder": ""
+          }
+        },
+        "company_logo": {
+          "type": "Group",
+          "config": {
+            "label": "company logo",
+            "repeat": true,
+            "fields": {
+              "logo": {
+                "type": "Image",
+                "config": {
+                  "label": "logo",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

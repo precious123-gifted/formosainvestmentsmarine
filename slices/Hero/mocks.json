@@ -1,0 +1,26 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"header1": {
+				"__TYPE__": "FieldContent",
+				"value": "motor",
+				"type": "Text"
+			},
+			"header2": {
+				"__TYPE__": "FieldContent",
+				"value": "period",
+				"type": "Text"
+			},
+			"products_button": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
+			}
+		},
+		"items": []
+	}
+]

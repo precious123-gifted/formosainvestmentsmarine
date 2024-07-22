@@ -1,0 +1,73 @@
+{
+  "id": "homeproducts",
+  "type": "SharedSlice",
+  "name": "Homeproducts",
+  "description": "Homeproducts",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "header": {
+          "type": "Text",
+          "config": {
+            "label": "header",
+            "placeholder": ""
+          }
+        },
+        "product_container": {
+          "type": "Group",
+          "config": {
+            "label": "product container",
+            "repeat": true,
+            "fields": {
+              "product_image": {
+                "type": "Image",
+                "config": {
+                  "label": "product image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "title",
+                  "placeholder": ""
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "description",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "button_intro_text": {
+          "type": "Text",
+          "config": {
+            "label": "button intro text",
+            "placeholder": ""
+          }
+        },
+        "all_products_button": {
+          "type": "Link",
+          "config": {
+            "label": "all products button",
+            "placeholder": "All Products",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

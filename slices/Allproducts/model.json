@@ -1,0 +1,57 @@
+{
+  "id": "allproducts",
+  "type": "SharedSlice",
+  "name": "Allproducts",
+  "description": "Allproducts",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "header": {
+          "type": "Text",
+          "config": {
+            "label": "header",
+            "placeholder": ""
+          }
+        },
+        "product": {
+          "type": "Group",
+          "config": {
+            "label": "product",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "title",
+                  "placeholder": ""
+                }
+              },
+              "writeup": {
+                "type": "Text",
+                "config": {
+                  "label": "writeup",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

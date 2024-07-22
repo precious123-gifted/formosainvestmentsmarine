@@ -1,0 +1,47 @@
+{
+  "id": "misson",
+  "type": "SharedSlice",
+  "name": "Misson",
+  "description": "Misson",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "header": {
+          "type": "Text",
+          "config": {
+            "label": "header",
+            "placeholder": ""
+          }
+        },
+        "writeup1": {
+          "type": "Text",
+          "config": {
+            "label": "writeup1",
+            "placeholder": ""
+          }
+        },
+        "writeup2": {
+          "type": "Text",
+          "config": {
+            "label": "writeup2",
+            "placeholder": ""
+          }
+        },
+        "writeup3": {
+          "type": "Text",
+          "config": {
+            "label": "writeup3",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

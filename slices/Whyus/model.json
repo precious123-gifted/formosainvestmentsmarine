@@ -1,0 +1,40 @@
+{
+  "id": "whyus",
+  "type": "SharedSlice",
+  "name": "Whyus",
+  "description": "Whyus",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "header": {
+          "type": "Text",
+          "config": {
+            "label": "Header",
+            "placeholder": ""
+          }
+        },
+        "writeup1": {
+          "type": "Text",
+          "config": {
+            "label": "Writeup1",
+            "placeholder": ""
+          }
+        },
+        "writeup2": {
+          "type": "Text",
+          "config": {
+            "label": "Writeup2",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

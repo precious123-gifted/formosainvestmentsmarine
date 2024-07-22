@@ -1,0 +1,33 @@
+{
+  "id": "enquiry",
+  "type": "SharedSlice",
+  "name": "Enquiry",
+  "description": "Enquiry",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "writeup": {
+          "type": "Text",
+          "config": {
+            "label": "writeup",
+            "placeholder": ""
+          }
+        },
+        "header": {
+          "type": "Text",
+          "config": {
+            "label": "header",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

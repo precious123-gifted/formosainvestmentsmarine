@@ -1,0 +1,42 @@
+{
+  "id": "hero",
+  "type": "SharedSlice",
+  "name": "Hero",
+  "description": "Hero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "header1": {
+          "type": "Text",
+          "config": {
+            "label": "header1",
+            "placeholder": ""
+          }
+        },
+        "header2": {
+          "type": "Text",
+          "config": {
+            "label": "header2",
+            "placeholder": ""
+          }
+        },
+        "products_button": {
+          "type": "Link",
+          "config": {
+            "label": "products button",
+            "placeholder": "Check Our Products",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
