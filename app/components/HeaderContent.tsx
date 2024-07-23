@@ -193,12 +193,12 @@ serviceListAnimation()
 
 <div
 onClick={() => setShowServicesDropdown(!showServicesDropdown)}
-ref={serviceTXT} className="services-text px-3 py-2   rounded text-[#FBFFFE] hover:bg-[#e0f3e6] cursor-pointer transition duration-300 ease-in-out   shadow-lg">
+ref={serviceTXT} className="services-text px-3 py-2   rounded text-[#FBFFFE] hover:bg-[#e9e2e0] cursor-pointer transition duration-300 ease-in-out   shadow-lg">
     Services
   </div>
   {showServicesDropdown && (
               <div ref={serviceList} className="mt-[90vw]  absolute z-50 left-[100vw]  w-full">
-              <div className=" rounded-md shadow-lg hover:bg-[#e0f3e6]  bg-[#FBFFFE] ring-1 ring-black ring-opacity-5">
+              <div className=" rounded-md shadow-lg hover:bg-[#e9e2e0]  bg-[#FBFFFE] ring-1 ring-black ring-opacity-5">
                                <div className="py-1 space-y-2" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                                  {serviceDropdownItems.map((item, index) => (
                                    <Link onClick={menuBackAnimation} 
@@ -230,7 +230,7 @@ const lastLink = '/about'
 onClick={menuBackAnimation}
 
  className={cn(
-  'px-3 py-2 h-full rounded hover:bg-[#e0f3e6] text-[#FBFFFE] transition duration-300 ease-in-out  ',
+  'px-3 py-2 h-full rounded hover:bg-[#e9e2e0] text-[#FBFFFE] transition duration-300 ease-in-out  ',
    logic && 'bg-[#162226] text-[#e8f7ed] hover:text-[#e0f3e6]  shadow-lg ' 
 )}
  >{label}</Link>
