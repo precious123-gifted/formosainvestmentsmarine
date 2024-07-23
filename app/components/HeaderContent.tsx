@@ -4,9 +4,7 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next"
 import React, { MouseEvent, MutableRefObject, TouchEvent, useEffect } from 'react';
 import Image from "next/image"
 import Link from "next/link"
-import cartIcon from "../../public/carticon.png";
-import menuIcon from "../../../public/menuicon.png";
-import exitIcon from "../../../public/exiticon.png"
+
 import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useStateContext } from "../StateManager";
@@ -82,17 +80,18 @@ useEffect(()=>{
 serviceListAnimation()
 })
 
-  const navigation = {
-    "products": {
-      label: "Products",
-      key: "product",
-      link: "/products" 
-    },
-    "about": {
+  const navigation = { 
+     "about": {
       label: "About",
       key: "about",
       link: "/about" 
     },
+    "contact": {
+      label: "Contact",
+      key: "contact",
+      link: "#contact" 
+    },
+  
   };
   const serviceTXT = useRef<HTMLDivElement>(null);
 
@@ -104,58 +103,24 @@ serviceListAnimation()
     date: string;
   }
 
-  const [oilData, setOilData] = useState<OilProduct[]>([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("/api/oilprice",{ next: { revalidate: 1 } });
-      const data: OilProduct[] = await response.json();
-      setOilData(data);
-    };
-
-    fetchData();
-
-    const intervalId = setInterval(fetchData, 20 * 60 * 1000);
-    return () => clearInterval(intervalId);
-  }, []);
+ 
 
 
  
 
-  const filteredProducts = oilData.filter(
-    (product: OilProduct) =>
-      product.title === "Oil (Brent)" ||
-      product.title === "Oil (WTI)" ||
-      product.title === "Coal" ||
-      product.title === "Natural Gas (Henry Hub)"
-  );
+ 
 
   return (
     <div className="w-[98%] portrait:w-[96%] portrait:flex-col portrait:flex">
       <div className="content w-full flex flex-row justify-between items-center pt-2">
-        <div ref={logo} className="logo opacity-0 cursor-pointer object-contain w-[15vw] portrait:w-[32vw] pb-1">
+        <div ref={logo} className="logo opacity-0 cursor-pointer object-contain w-[15vw] portrait:w-[32vw] pb-2">
           <Link onClick={menuBackAnimation} href={"/"}>
             <PrismicNextImage field={settings.data.logo} className="rounded-md" />
           </Link>
         </div>
 
-        <div className="oilprice_container portrait:hidden text-[#dfece3] flex text-[1vw] portrait:text-[1.2vw] space-x-10 portrait:space-x-4">
-          {filteredProducts.slice(0, 4).map((product, index) => (
-            <div key={index} className="product flex flex-col">
-              <div className="title text-[#d4bf55]">{product.title}</div>
-              <div className="price">{product.price}</div>
-              <div className={cn(
-                "percentage",
-                product.percentage.includes("-") ? "text-[#d36956]" : "text-[#38c058]",
-              )}>
-                {product.percentage}
-                <>%</>
-              </div>
-              <div className="unit text-[#bec7c1]">{product.unit}</div>
-              <div className="date text-[#bec7c1]">{product.date}</div>
-            </div>
-          ))}
-        </div>
+        
 
         <div className="cartNmenuDiv landscape:hidden flex items-center relative space-x-8 portrait:sm:space-x-14">
           <div className="icon">
@@ -167,14 +132,14 @@ serviceListAnimation()
           </div> 
         </div>
 
-        <div ref={desktoplinks} className="links opacity-0 px-1 portrait:hidden w-auto space-x-[4vw] flex items-center bg-[#FBFFFE] rounded-3xl">
+        <div ref={desktoplinks} className="links opacity-0  px-1 portrait:hidden w-auto space-x-[4vw] flex items-center  ">
           <ul className="flex justify-between items-center w-[80%] text-[1.5vw] space-x-[6vw]">
             <div 
               className="relative"
               onMouseEnter={() => setShowServicesDropdown(true)}
               onMouseLeave={() => setShowServicesDropdown(false)}
             >
-                <div ref={serviceTXT} className="services-text px-3 py-2 rounded hover:bg-[#e0f3e6] cursor-pointer transition duration-300 ease-in-out text-[#0D2323] rounded-l-3xl shadow-lg">
+                <div ref={serviceTXT} className="services-text px-3 py-2   cursor-pointer transition duration-300 ease-in-out text-[#ECDEDE]  shadow-lg">
                   Services
                 </div>
               {showServicesDropdown && (
@@ -202,14 +167,12 @@ serviceListAnimation()
               const isActive = pathname === key 
               const isActiveChild = key !== '/' && pathname.includes(`${key}`)
               const logic = !isActiveChild ? isActive : isActiveChild
-              const lastLink = '/about'
               return(
                 <div key={key}>
                   <Link href={link}
                     className={cn(
-                      'px-3 py-2 h-full rounded hover:bg-[#e0f3e6] transition duration-300 ease-in-out text-[#0D2323] ',
-                      logic && 'bg-[#162226] text-[#e8f7ed] hover:text-[#e0f3e6] shadow-lg',
-                      link === lastLink && 'rounded-r-3xl'
+                      'px-3 py-2 h-full rounded transition duration-300 ease-in-out shadow-lg text-[#ECDEDE]  ',
+                      logic && 'bg-[#162226] text-[#e8f7ed] hover:text-[#e0f3e6] ',
                     )}
                   >
                     {label}
@@ -221,23 +184,7 @@ serviceListAnimation()
         </div>
       </div>
 
-      <div className="oilprice_container opacity-1 landscape:hidden text-[#dfece3] py-2 flex text-[2.8vw] justify-between">
-        {filteredProducts.slice(0, 4).map((product, index) => (
-          <div key={index} className="product flex flex-col">
-            <div className="title text-[#d4bf55]">{product.title}</div>
-            <div className="price">{product.price}</div>
-            <div className={cn(
-              "percentage",
-              product.percentage.includes("-") ? "text-[#d36956]" : "text-[#38c058]",
-            )}>
-              {product.percentage}
-              <>%</>
-            </div>
-            <div className="unit text-[2.2vw] text-[#bec7c1]">{product.unit}</div>
-            <div className="date text-[2.2vw] text-[#bec7c1]">{product.date}</div>
-          </div>
-        ))}
-      </div>
+  
 
    
 

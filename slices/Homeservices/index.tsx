@@ -66,7 +66,7 @@ const Homeservices = ({ slice }: HomeservicesProps): JSX.Element => {
     <Bounded
     // data-slice-type={slice.slice_type}
     // data-slice-variation={slice.variation}
-   className="  text-[#333D3E] bg-[#EDF4F6]" 
+   className="  text-[#333D3E] bg-[#ECDEDE]" 
     >
 <div id="services" className="content w-full flex flex-col items-center pt-[10vw]  pb-[6vw] space-y-[8vw] portrait:space-y-[12vw]"> 
  

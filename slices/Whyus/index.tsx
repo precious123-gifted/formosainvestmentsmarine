@@ -21,6 +21,7 @@ const Whyus = ({ slice }: WhyusProps): JSX.Element => {
   const header = useRef(null)
   const writeup = useRef(null)
   const writeup2 = useRef(null)
+  const writeup3 = useRef(null)
 
 
 
@@ -60,7 +61,7 @@ const Whyus = ({ slice }: WhyusProps): JSX.Element => {
     <Bounded
     data-slice-type={slice.slice_type}
     data-slice-variation={slice.variation}
-   className="  text-[#FBFFFE] bg-[#162226] pb-8 " >
+   className="  text-[#393f41] bg-[#ECDEDE] pb-8 " >
    
   <div className=" content w-full  flex   portrait:flex-col rounded-xl relative">
 
@@ -83,19 +84,30 @@ className="header opacity-0 text-[3vw] portrait:text-[6vw] portrait:sm:mb-8">
 </span>
 ))}
 </div>
+<div className="texts space-y-[20vw]">
 
-<InView as="div" onChange={(inView, entry) => opacityAnimation(writeup,0.4,inView)}>
+<InView as="div" onChange={(inView, entry) => opacityAnimation(writeup,1,inView)}>
 
-<div ref={ writeup} className="writeup opacity-1 text-[1.4vw] portrait:text-[4.3vw]">{slice.primary.writeup1}</div>
+<div ref={ writeup} className="writeup opacity-1  text-[4.1vw] portrait:text-[4.3vw]">{slice.primary.writeup1}</div>
 </InView>
 
 
-<InView as="div" onChange={(inView, entry) => opacityAnimation(writeup2,0.4,inView)}>
+<InView as="div" onChange={(inView, entry) => opacityAnimation(writeup2,1,inView)}>
 
-<div ref={ writeup2} className="writeup opacity-1 text-[1.4vw] portrait:text-[4.3vw]">{slice.primary.writeup2}</div>
+<div ref={ writeup2} className="writeup opacity-1  text-[4.1vw] portrait:text-[4.3vw]">{slice.primary.writeup2}</div>
 </InView>
 
  
+<InView as="div" onChange={(inView, entry) => opacityAnimation(writeup3,1,inView)}>
+
+<div ref={ writeup3} className="writeup opacity-1  text-[4.1vw] portrait:text-[4.3vw]">{slice.primary.writeup3}</div>
+</InView>
+
+
+</div>
+
+
+
 </div>
 
 

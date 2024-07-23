@@ -1,0 +1,45 @@
+/* FireIcon.module.scss */
+.section {
+    width: 100vw;
+  }
+  
+  .text-ctn {
+    margin: 18px;
+    display: flex;
+  }
+  
+  .marquee {
+    display: flex;
+  margin-left: -2vw;
+  margin-top: -1vw;
+    white-space: nowrap;
+    overflow: hidden; /* Added to prevent text overflow */
+    
+  }
+  
+  .marqueetext {
+    display: flex;
+    animation: scroll 6s linear infinite;
+  }
+  
+  @keyframes scroll {
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .animatedship {
+    animation: nudge 6s ease-in-out infinite;
+  }
+  
+  @keyframes nudge {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(3.6px, -3.6px); /* Move 5px to the top right */
+    }
+    100% {
+      transform: translate(0, 0); /* Back to original position */
+    }
+  }
+  

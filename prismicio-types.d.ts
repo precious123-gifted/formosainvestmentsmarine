@@ -134,6 +134,8 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
+type SettingsDocumentDataSlicesSlice = never;
+
 /**
  * Content for settings documents
  */
@@ -148,6 +150,59 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   logo: prismic.ImageField<never>;
+
+  /**
+   * OG image field in *settings*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.og_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  og_image: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *settings*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SettingsDocumentDataSlicesSlice> /**
+   * Meta Title field in *settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: settings.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: settings.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *settings*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
 }
 
 /**
@@ -242,180 +297,6 @@ type AboutSliceVariation = AboutSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
-
-/**
- * Item in *Allproducts → Default → Primary → product*
- */
-export interface AllproductsSliceDefaultPrimaryProductItem {
-  /**
-   * image field in *Allproducts → Default → Primary → product*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: allproducts.default.primary.product[].image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
-   * title field in *Allproducts → Default → Primary → product*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: allproducts.default.primary.product[].title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * writeup field in *Allproducts → Default → Primary → product*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: allproducts.default.primary.product[].writeup
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  writeup: prismic.KeyTextField;
-}
-
-/**
- * Primary content in *Allproducts → Default → Primary*
- */
-export interface AllproductsSliceDefaultPrimary {
-  /**
-   * header field in *Allproducts → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: allproducts.default.primary.header
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  header: prismic.KeyTextField;
-
-  /**
-   * product field in *Allproducts → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: allproducts.default.primary.product[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  product: prismic.GroupField<
-    Simplify<AllproductsSliceDefaultPrimaryProductItem>
-  >;
-}
-
-/**
- * Default variation for Allproducts Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type AllproductsSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<AllproductsSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Allproducts*
- */
-type AllproductsSliceVariation = AllproductsSliceDefault;
-
-/**
- * Allproducts Shared Slice
- *
- * - **API ID**: `allproducts`
- * - **Description**: Allproducts
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type AllproductsSlice = prismic.SharedSlice<
-  "allproducts",
-  AllproductsSliceVariation
->;
-
-/**
- * Item in *Clients → Default → Primary → company logo*
- */
-export interface ClientsSliceDefaultPrimaryCompanyLogoItem {
-  /**
-   * logo field in *Clients → Default → Primary → company logo*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: clients.default.primary.company_logo[].logo
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  logo: prismic.ImageField<never>;
-}
-
-/**
- * Primary content in *Clients → Default → Primary*
- */
-export interface ClientsSliceDefaultPrimary {
-  /**
-   * writeup field in *Clients → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: clients.default.primary.writeup
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  writeup: prismic.KeyTextField;
-
-  /**
-   * header field in *Clients → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: clients.default.primary.header
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  header: prismic.KeyTextField;
-
-  /**
-   * company logo field in *Clients → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: clients.default.primary.company_logo[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  company_logo: prismic.GroupField<
-    Simplify<ClientsSliceDefaultPrimaryCompanyLogoItem>
-  >;
-}
-
-/**
- * Default variation for Clients Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ClientsSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<ClientsSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Clients*
- */
-type ClientsSliceVariation = ClientsSliceDefault;
-
-/**
- * Clients Shared Slice
- *
- * - **API ID**: `clients`
- * - **Description**: Clients
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ClientsSlice = prismic.SharedSlice<
-  "clients",
-  ClientsSliceVariation
->;
 
 /**
  * Primary content in *Enquiry → Default → Primary*
@@ -533,118 +414,6 @@ type HeroSliceVariation = HeroSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
-
-/**
- * Item in *Homeproducts → Default → Primary → product container*
- */
-export interface HomeproductsSliceDefaultPrimaryProductContainerItem {
-  /**
-   * product image field in *Homeproducts → Default → Primary → product container*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homeproducts.default.primary.product_container[].product_image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  product_image: prismic.ImageField<never>;
-
-  /**
-   * title field in *Homeproducts → Default → Primary → product container*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homeproducts.default.primary.product_container[].title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * description field in *Homeproducts → Default → Primary → product container*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homeproducts.default.primary.product_container[].description
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  description: prismic.KeyTextField;
-}
-
-/**
- * Primary content in *Homeproducts → Default → Primary*
- */
-export interface HomeproductsSliceDefaultPrimary {
-  /**
-   * header field in *Homeproducts → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homeproducts.default.primary.header
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  header: prismic.KeyTextField;
-
-  /**
-   * product container field in *Homeproducts → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homeproducts.default.primary.product_container[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  product_container: prismic.GroupField<
-    Simplify<HomeproductsSliceDefaultPrimaryProductContainerItem>
-  >;
-
-  /**
-   * button intro text field in *Homeproducts → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homeproducts.default.primary.button_intro_text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  button_intro_text: prismic.KeyTextField;
-
-  /**
-   * all products button field in *Homeproducts → Default → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: All Products
-   * - **API ID Path**: homeproducts.default.primary.all_products_button
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  all_products_button: prismic.LinkField;
-}
-
-/**
- * Default variation for Homeproducts Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HomeproductsSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<HomeproductsSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Homeproducts*
- */
-type HomeproductsSliceVariation = HomeproductsSliceDefault;
-
-/**
- * Homeproducts Shared Slice
- *
- * - **API ID**: `homeproducts`
- * - **Description**: Homeproducts
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HomeproductsSlice = prismic.SharedSlice<
-  "homeproducts",
-  HomeproductsSliceVariation
->;
 
 /**
  * Item in *Homeservices → Default → Primary → services container*
@@ -853,6 +622,36 @@ export interface WhyusSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   writeup2: prismic.KeyTextField;
+
+  /**
+   * Writeup3 field in *Whyus → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: whyus.default.primary.writeup3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  writeup3: prismic.KeyTextField;
+
+  /**
+   * Writeup4 field in *Whyus → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: whyus.default.primary.writeup4
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  writeup4: prismic.KeyTextField;
+
+  /**
+   * Writeup5 field in *Whyus → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: whyus.default.primary.writeup5
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  writeup5: prismic.KeyTextField;
 }
 
 /**
@@ -900,21 +699,12 @@ declare module "@prismicio/client" {
       HomeDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
+      SettingsDocumentDataSlicesSlice,
       AllDocumentTypes,
       AboutSlice,
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
-      AllproductsSlice,
-      AllproductsSliceDefaultPrimaryProductItem,
-      AllproductsSliceDefaultPrimary,
-      AllproductsSliceVariation,
-      AllproductsSliceDefault,
-      ClientsSlice,
-      ClientsSliceDefaultPrimaryCompanyLogoItem,
-      ClientsSliceDefaultPrimary,
-      ClientsSliceVariation,
-      ClientsSliceDefault,
       EnquirySlice,
       EnquirySliceDefaultPrimary,
       EnquirySliceVariation,
@@ -923,11 +713,6 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
-      HomeproductsSlice,
-      HomeproductsSliceDefaultPrimaryProductContainerItem,
-      HomeproductsSliceDefaultPrimary,
-      HomeproductsSliceVariation,
-      HomeproductsSliceDefault,
       HomeservicesSlice,
       HomeservicesSliceDefaultPrimaryServicesContainerItem,
       HomeservicesSliceDefaultPrimary,

@@ -25,18 +25,10 @@ let about = '/about'
 
   return (
     <Bounded>
-    <div className="content relative landscape:h-[50vh] bg-[#EEF4F8] text-[#282E30]  w-full px-5 py-8 pt-20 flex  flex-col space-y-4    portrait:sm:justify-between portrait:flex-col portrait:space-y-6 portrait:sm:space-y-0  ">
+    <div className="content relative landscape:h-[50vh] bg-[#393f41] text-[#ECDEDE]  w-full px-5 py-8 pt-20 flex  flex-col space-y-4    portrait:sm:justify-between portrait:flex-col portrait:space-y-6 portrait:sm:space-y-0  ">
 
 
-
-  <Image
-    src={footerBG}
-    alt="Background"
-    layout="fill"
-    objectFit="cover"
-    priority
-    className=" w-full h-full  "
-  />
+ 
 
 
 

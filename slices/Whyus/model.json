@@ -32,6 +32,27 @@
             "label": "Writeup2",
             "placeholder": ""
           }
+        },
+        "writeup3": {
+          "type": "Text",
+          "config": {
+            "label": "Writeup3",
+            "placeholder": ""
+          }
+        },
+        "writeup4": {
+          "type": "Text",
+          "config": {
+            "label": "Writeup4",
+            "placeholder": ""
+          }
+        },
+        "writeup5": {
+          "type": "Text",
+          "config": {
+            "label": "Writeup5",
+            "placeholder": ""
+          }
         }
       },
       "items": {}

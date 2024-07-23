@@ -17,6 +17,21 @@
 				"__TYPE__": "FieldContent",
 				"value": "folks",
 				"type": "Text"
+			},
+			"writeup3": {
+				"__TYPE__": "FieldContent",
+				"value": "mice",
+				"type": "Text"
+			},
+			"writeup4": {
+				"__TYPE__": "FieldContent",
+				"value": "owner",
+				"type": "Text"
+			},
+			"writeup5": {
+				"__TYPE__": "FieldContent",
+				"value": "world",
+				"type": "Text"
 			}
 		},
 		"items": []

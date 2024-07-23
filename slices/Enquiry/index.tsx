@@ -9,6 +9,8 @@ import oilrig from "../../public/oilrig.png"
 import servermailer from "./servermailer"
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import styles from "../../app/components/seawater/seawater.module.scss"
+import Marquee from '@/app/components/seawater/SeaWater';
 
 
 /**
@@ -67,9 +69,9 @@ const Enquiry = ({ slice }: EnquiryProps): JSX.Element => {
     <>
   <ToastContainer/>
 
-    <Bounded className="text-[#333D3E] bg-[#EDF4F6]">
+    <Bounded className="text-[#393f41] bg-[#ECDEDE]">
 
-      <div className="content w-full flex landscape:justify-between portrait:flex-col portrait:items-center pb-[6vw] pt-10 space-y-[4vw] portrait:space-y-[12vw]">
+      <div className="content w-full flex landscape:justify-between portrait:flex-col-reverse portrait:items-center pb-[6vw] pt-10 space-y-[4vw] portrait:space-y-[12vw]">
         <div className="form w-[50%] portrait:w-full">
           <div className="clients_writeup_lead mb-4 portrait:mt-10 portrait:mb-10 mt-4 text-[2vw] portrait:text-[6vw] portrait:sm:text-[3vw]">{slice.primary.writeup}</div>
 
@@ -78,7 +80,7 @@ const Enquiry = ({ slice }: EnquiryProps): JSX.Element => {
               <input 
                 required 
                 type="text" 
-                className='brandname outline-none h-[3vw] portrait:h-[14vw] px-3 text-[#EDF4F6] bg-[#2F3D47] rounded-md' 
+                className='brandname outline-none h-[3vw] portrait:h-[14vw] px-3 text-[#EDF4F6] bg-[#393f41] rounded-md' 
                 name="name" 
                 placeholder='Name' 
                 value={formData.name}
@@ -87,7 +89,7 @@ const Enquiry = ({ slice }: EnquiryProps): JSX.Element => {
               <input 
                 required 
                 type="text" 
-                className='title outline-none h-[3vw] portrait:h-[14vw] px-3 text-[#EDF4F6] bg-[#2F3D47] rounded-md' 
+                className='title outline-none h-[3vw] portrait:h-[14vw] px-3 text-[#EDF4F6] bg-[#393f41] rounded-md' 
                 name="company_name" 
                 placeholder='Company Name'
                 value={formData.company_name}
@@ -96,7 +98,7 @@ const Enquiry = ({ slice }: EnquiryProps): JSX.Element => {
               <input 
                 required 
                 type="email" 
-                className='shortdescription outline-none h-[3vw] portrait:h-[14vw] px-3 text-[#EDF4F6] bg-[#2F3D47] rounded-md' 
+                className='shortdescription outline-none h-[3vw] portrait:h-[14vw] px-3 text-[#EDF4F6] bg-[#393f41] rounded-md' 
                 name="email" 
                 placeholder='Email'
                 value={formData.email}
@@ -105,7 +107,7 @@ const Enquiry = ({ slice }: EnquiryProps): JSX.Element => {
               <input 
                 required 
                 type="tel" 
-                className='shortdescription outline-none h-[3vw] portrait:h-[14vw] px-3 text-[#EDF4F6] bg-[#2F3D47] rounded-md' 
+                className='shortdescription outline-none h-[3vw] portrait:h-[14vw] px-3 text-[#EDF4F6] bg-[#393f41] rounded-md' 
                 name="phone_number" 
                 placeholder='Phone Number'
                 value={formData.phone_number}
@@ -113,7 +115,7 @@ const Enquiry = ({ slice }: EnquiryProps): JSX.Element => {
               />
               <textarea 
                 required 
-                className='fulldescription w-[48.5vw] portrait:w-full outline-none h-[12vw] resize-none portrait:h-[28vw] px-3 py-1 text-[#EDF4F6] bg-[#2F3D47] rounded-md' 
+                className='fulldescription w-[48.5vw] portrait:w-full outline-none h-[12vw] resize-none portrait:h-[28vw] px-3 py-1 text-[#EDF4F6] bg-[#393f41] rounded-md' 
                 name="enquiry" 
                 placeholder='Write down Your Enquiry'
                 value={formData.enquiry}
@@ -121,14 +123,15 @@ const Enquiry = ({ slice }: EnquiryProps): JSX.Element => {
               />
             </div>
 
-            <button type="submit" className="btn mt-10 portrait:w-full bg-[#423B17] text-[#EDF4F6] cursor-pointer portrait:px-[22vw] px-[6vw] py-3 rounded-[0.280rem] text-[1.8vw] portrait:text-[8vw] hover:bg-[#252d2e] duration-[0.2s] ease-in-out">
+            <button type="submit" className="btn mt-10 portrait:w-full bg-[#2c6355] text-[#EDF4F6] cursor-pointer portrait:px-[22vw] px-[6vw] py-3 rounded-[0.280rem] text-[1.8vw] portrait:text-[8vw] hover:bg-[#252d2e] duration-[0.2s] ease-in-out">
               Submit
             </button>
           </form>
         </div>
 
         <div className="svg w-[30%] portrait:w-full">
-          <Image src={oilrig} alt="oilrig_svg" className="object-fit" />
+          <Image src={oilrig} alt="oilrig_svg" className={styles.animatedship}/>
+          <Marquee/>
         </div>
       </div>
     </Bounded>
