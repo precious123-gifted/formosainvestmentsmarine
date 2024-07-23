@@ -36,12 +36,9 @@ export default function HeaderContent({settings}: any) {
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
 
   const serviceDropdownItems = [
-    { label: "Sales", link: "/sales" },
-    { label: "Supply", link: "/supply" },
-    { label: "Marketing", link: "/marketing" },
-    { label: "Bunkering", link: "/bunkering" },
-    { label: "Offshore Intake-Offtake Facilities", link: "/offshore" },
-    { label: "Petroleum & Gas Storage", link: "/storage" },
+    { label: "Vessel Chartering and Brokerage", link: "/Vessel Chartering and Brokerage" },
+    { label: "Marine Logistics and Supply Chain Management", link: "/Marine Logistics and Supply Chain Management" },
+    { label: "Onshore & Offshore EPICC", link: "/Onshore & Offshore EPICC" },
   ];
 
   const loadingAnimation = useEffect(()=>{
@@ -56,7 +53,7 @@ export default function HeaderContent({settings}: any) {
   const{menu,setMenu} = useStateContext()
 
   const menuAnimation = () =>{
-    gsap.to(menudiv.current,{top:menu?"-30vw":"13vw",opacity:menu?0:1})
+    gsap.to(menudiv.current,{top:menu?"-100vw":"15vw",opacity:menu?0:1})
   }
 
   const menuBackAnimation = () =>{
@@ -144,7 +141,7 @@ serviceListAnimation()
                 </div>
               {showServicesDropdown && (
                <div className="pt-2 absolute z-50 left-0  w-48">
- <div className=" rounded-md shadow-lg hover:bg-[#e0f3e6] bg-white ring-1 ring-black ring-opacity-5">
+ <div className=" rounded-md shadow-lg hover:bg-[#f8f3f3] bg-white ring-1 ring-black ring-opacity-5">
                   <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                     {serviceDropdownItems.map((item, index) => (
                       <Link 
@@ -191,12 +188,12 @@ serviceListAnimation()
       
 
 
-<div ref={menudiv} className="menu opacity-0 landscape:hidden portrait:space-x-6 w-full left-0 h-[24vw] bg-[#162226] text-[#e9e2e0]   absolute z-50 top-[-0vw] flex justify-center items-center ">
+<div ref={menudiv} className="menu opacity-0 landscape:hidden portrait:space-x-6 w-full left-0 h-[60vw] bg-[#393f41] text-[#e9e2e0]   absolute z-50 top-[-0vw] flex flex-col space-y-11 items-center ">
 
 
 <div
 onClick={() => setShowServicesDropdown(!showServicesDropdown)}
-ref={serviceTXT} className="services-text px-3 py-2   rounded bg-[#FBFFFE] hover:bg-[#e0f3e6] cursor-pointer transition duration-300 ease-in-out text-[#0D2323]  shadow-lg">
+ref={serviceTXT} className="services-text px-3 py-2   rounded text-[#FBFFFE] hover:bg-[#e0f3e6] cursor-pointer transition duration-300 ease-in-out   shadow-lg">
     Services
   </div>
   {showServicesDropdown && (
@@ -233,7 +230,7 @@ const lastLink = '/about'
 onClick={menuBackAnimation}
 
  className={cn(
-  'px-3 py-2 h-full rounded hover:bg-[#e0f3e6] bg-[#FBFFFE] transition duration-300 ease-in-out text-[#0D2323] ',
+  'px-3 py-2 h-full rounded hover:bg-[#e0f3e6] text-[#FBFFFE] transition duration-300 ease-in-out  ',
    logic && 'bg-[#162226] text-[#e8f7ed] hover:text-[#e0f3e6]  shadow-lg ' 
 )}
  >{label}</Link>

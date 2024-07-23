@@ -84,23 +84,23 @@ className="header opacity-0 text-[3vw] portrait:text-[6vw] portrait:sm:mb-8">
 </span>
 ))}
 </div>
-<div className="texts space-y-[20vw]">
+<div className="texts space-y-[20vw] portrait:space-y-[30vw]">
 
 <InView as="div" onChange={(inView, entry) => opacityAnimation(writeup,1,inView)}>
 
-<div ref={ writeup} className="writeup opacity-1  text-[4.1vw] portrait:text-[4.3vw]">{slice.primary.writeup1}</div>
+<div ref={ writeup} className="writeup opacity-1  text-[4.1vw] portrait:text-[7vw]">{slice.primary.writeup1}</div>
 </InView>
 
 
 <InView as="div" onChange={(inView, entry) => opacityAnimation(writeup2,1,inView)}>
 
-<div ref={ writeup2} className="writeup opacity-1  text-[4.1vw] portrait:text-[4.3vw]">{slice.primary.writeup2}</div>
+<div ref={ writeup2} className="writeup opacity-1  text-[4.1vw] portrait:text-[7vw]">{slice.primary.writeup2}</div>
 </InView>
 
  
 <InView as="div" onChange={(inView, entry) => opacityAnimation(writeup3,1,inView)}>
 
-<div ref={ writeup3} className="writeup opacity-1  text-[4.1vw] portrait:text-[4.3vw]">{slice.primary.writeup3}</div>
+<div ref={ writeup3} className="writeup opacity-1  text-[4.1vw] portrait:text-[7vw]">{slice.primary.writeup3}</div>
 </InView>
 
 
