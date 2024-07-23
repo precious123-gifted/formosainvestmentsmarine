@@ -9,7 +9,7 @@ interface FormData {
   enquiry: string;
 }
 
-export default async function submitForm(formData: FormData) {
+export default async function submitForm(formData: FormData ) {
   await sendMail({
     to: "formosa6js@gmail.com",
     name: `${formData.name}`,

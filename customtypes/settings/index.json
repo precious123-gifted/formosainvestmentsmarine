@@ -22,6 +22,20 @@
           "thumbnails": []
         }
       },
+      "company_title": {
+        "type": "Text",
+        "config": {
+          "label": "Company Title",
+          "placeholder": ""
+        }
+      },
+      "company_description": {
+        "type": "Text",
+        "config": {
+          "label": "Company Description",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

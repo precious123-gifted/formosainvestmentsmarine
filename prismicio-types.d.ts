@@ -163,6 +163,28 @@ interface SettingsDocumentData {
   og_image: prismic.ImageField<never>;
 
   /**
+   * Company Title field in *settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.company_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_title: prismic.KeyTextField;
+
+  /**
+   * Company Description field in *settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.company_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_description: prismic.KeyTextField;
+
+  /**
    * Slice Zone field in *settings*
    *
    * - **Field Type**: Slice Zone
